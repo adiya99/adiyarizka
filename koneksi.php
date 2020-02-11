@@ -1,5 +1,5 @@
 <?php
-@$page=$_GET['page'];//page
+//@$page=$_GET['page'];//page
 @$tabel=$_GET['tabel'];//tabel 
 @$laporan=$_GET['laporan'];//tabel 
 @$query=$_GET['query'];//query_pilih    
