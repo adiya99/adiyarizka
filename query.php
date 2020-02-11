@@ -14,5 +14,5 @@ $query2="select * from $tabel2 $where";
 }else{ //master data
 $query="select * from $tabel $where";
 }
-//echo "$query";
+echo "$query";
 ?>
