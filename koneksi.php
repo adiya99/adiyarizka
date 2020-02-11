@@ -85,19 +85,5 @@ if($query=="tambah"){
 		@$sql = $db->query("INSERT INTO $tabel VALUES ('$values')");
 	}
 }
-if(@$sql){
-	$d=$_SERVER['HTTP_REFERER'];
-	echo "<script>location.href='$d';</script>";
-}else{
-	//echo "$values";
-	// echo "<br>";
-	// echo "ADA KESALAHAN";
-}
-//fungsii php
-function modify($str) {
-    return ucwords(str_replace("_", " ", $str));
-}
-function convert_to_rupiah($angka){
-	return 'Rp. '.strrev(implode('.',str_split(strrev(strval($angka)),3)));
-}
+
 ?>
