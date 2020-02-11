@@ -1,3 +1,4 @@
+<?php
 @$tabel=$_GET['tabel'];//tabel 
 @$laporan=$_GET['laporan'];//tabel 
 @$query=$_GET['query'];//query_pilih    
@@ -98,3 +99,4 @@ function modify($str) {
 function convert_to_rupiah($angka){
 	return 'Rp. '.strrev(implode('.',str_split(strrev(strval($angka)),3)));
 }
+?>
