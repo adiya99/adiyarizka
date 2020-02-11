@@ -1,4 +1,4 @@
-
+<?php
 if(@$where==""){
   $where="";
 }
@@ -15,3 +15,4 @@ $query2="select * from $tabel2 $where";
 $query="select * from $tabel $where";
 }
 //echo "$query";
+?>
