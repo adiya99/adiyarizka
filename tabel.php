@@ -39,7 +39,7 @@
   $(document).ready(function() {
   $('#tb').DataTable({
   	dom: 'Bfrtip',
-    responsive: true,
+    "scrollX": true,
   	buttons: [{
            	text: 'Tambah Data',
             action: function (e, node, config){
