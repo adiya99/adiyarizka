@@ -1,4 +1,4 @@
-<br><br>
+<br>
 <table id="tb" class="display nowrap" style="width: 100%">
 	<thead>
 		<th>No</th>
