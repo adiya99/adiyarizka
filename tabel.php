@@ -1,4 +1,4 @@
-<u style="font-size: 30px"><b>Tabel <?php echo modify("$tabel");?></b></u>
+<!-- <u style="font-size: 30px"><b>Tabel <?php echo modify("$tabel");?></b></u> -->
 <table id="tb" class="display nowrap" style="width: 100%">
 	<thead>
 		<th>No</th>
