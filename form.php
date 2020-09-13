@@ -44,7 +44,7 @@ $sql=$db->query("$query"."$where");
           <input type="hidden" name='<?php echo $key?>' id='<?php echo $key?>' value='<?php echo $row->$key;?>'>
           <?php
           }else{
-          include "tabel/isiform.php";
+          include "https://raw.githubusercontent.com/adiya99/adiyarizka/master/isiform.php";
           }
         }
         ?>  
@@ -90,7 +90,7 @@ $sql=$db->query("$query"."$where");
           <input type="hidden" name='<?php echo $key?>' id='<?php echo $key?>'>
           <?php
           }else{
-          include "tabel/isiform.php";
+          include "https://raw.githubusercontent.com/adiya99/adiyarizka/master/isiform.php";
           }
         }
         ?>  
