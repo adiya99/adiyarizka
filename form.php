@@ -118,8 +118,8 @@ while ($rowfk=$qfk->fetch_object()){
   }
 $tabel=$tabel_fk[$i];
 $where="";
-include "sql.php";
-include "tabel/form_fk.php";
+include "https://raw.githubusercontent.com/adiya99/adiyarizka/master/sql.php";
+include "https://raw.githubusercontent.com/adiya99/adiyarizka/master/form_fk.php";
 //echo $query;
 }
 }
