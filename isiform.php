@@ -66,7 +66,7 @@
     </div>
   </div>
       <?php  }else if(in_array($key,$typetext)){?>
-      <textarea rows="1" cols="50" name='<?php echo $key?>' class='form-control' required><?php echo @$editkey?></textarea>
+      <textarea rows="3" cols="50" name='<?php echo $key?>' class='form-control' required><?php echo @$editkey?></textarea>
       <?php }else{?>
       <input type='text' class='form-control' name='<?php echo $key?>' id='<?php echo $key?>' value="<?php echo @$editkey?>" required>
       <?php } ?>
