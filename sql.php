@@ -2,11 +2,11 @@
 if(@$where==""){
 	$where="";
 }
-$query="select * from $tabel $where order by $pk desc";
 //pk tabel
 $sqlpk=$db->query("select column_name,column_key,data_type,extra from information_schema.columns where table_name='$tabel' && table_schema='$database' and column_key='PRI'");
 $rowpk=$sqlpk->fetch_object();
 @$pk=$rowpk->column_name;
+$query="select * from $tabel $where order by $pk desc";
 
 //fk tabel
 $sql3 = $db->query("select column_name as fk,SUBSTRING(COLUMN_NAME, 4, 100) AS tabel from information_schema.columns where table_schema='$database' and table_name='$tabel' and COLUMN_KEY='Mul' ");
