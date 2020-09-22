@@ -22,17 +22,17 @@ $rowir=$sqlir->fetch_object();
 
 if($ir==0){
 $query2="select * from $tabel_fk[$ir]";
-$query="select $tabel.*,$tabel_fk[$ir].* from $tabel join $tabel_fk[$ir] on $tabel.$typefk[$ir]=$tabel_fk[$ir].$typefk[$ir] $where";
+$query="select $tabel.*,$tabel_fk[$ir].* from $tabel join $tabel_fk[$ir] on $tabel.$typefk[$ir]=$tabel_fk[$ir].$typefk[$ir] $where order by $pk desc";
 
 }if($ir==1){
 $tabelfk3=$rowir->tabelfk;
 $query3="select * from $tabelfk3";
-$query="select $tabel.*,$tabel_fk[0].*,$tabelfk3.* from $tabel join $tabel_fk[0] join $tabelfk3 on $tabel.$typefk[0]=$tabel_fk[0].$typefk[0] and $tabel.$typefk[$ir]=$tabelfk3.$typefk[$ir] $where"; 
+$query="select $tabel.*,$tabel_fk[0].*,$tabelfk3.* from $tabel join $tabel_fk[0] join $tabelfk3 on $tabel.$typefk[0]=$tabel_fk[0].$typefk[0] and $tabel.$typefk[$ir]=$tabelfk3.$typefk[$ir] $where order by $pk desc"; 
 
 }if($ir==2){
 $tabelfk4=$rowir->tabelfk;
 $query4="select * from $tabelfk4";
-$query="select $tabel.*,$tabel_fk[0].*,$tabel_fk[1].*,$tabelfk4.* from $tabel join $tabel_fk[0] join $tabel_fk[1] join $tabelfk4 on $tabel.$typefk[0]=$tabel_fk[0].$typefk[0] and $tabel.$typefk[1]=$tabel_fk[1].$typefk[1] and $tabel.$typefk[$ir]=$tabelfk4.$typefk[$ir] $where"; 
+$query="select $tabel.*,$tabel_fk[0].*,$tabel_fk[1].*,$tabelfk4.* from $tabel join $tabel_fk[0] join $tabel_fk[1] join $tabelfk4 on $tabel.$typefk[0]=$tabel_fk[0].$typefk[0] and $tabel.$typefk[1]=$tabel_fk[1].$typefk[1] and $tabel.$typefk[$ir]=$tabelfk4.$typefk[$ir] $where order by $pk desc"; 
 }
 
 $ir++; 	
