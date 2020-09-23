@@ -83,7 +83,7 @@ while ($row=$queryinfo->fetch_object()){
       <?php }if(!in_array($tabel,$no_edit) and @$_GET['tabel']){ ?>
           <edit class="btn btn-xs btn-info btn-edit" id="<?php echo $row->$pk;?>" ><i class="fa fa-edit"></i> Edit</edit>
       <?php }if(!in_array($tabel,$no_del) and @$_GET['tabel']){?>
-          <button class="btn btn-xs btn-danger" onclick="if(confirm('Are you sure you want to delete your post?')){location.href='konek.php?tabel=<?php echo $tabel;?>&query=hapus&id=<?php echo $row->$pk;?>';return false;};"><i class="fa fa-trash"></i> Hapus</button>
+          <delete class="btn btn-xs btn-danger" onclick="if(confirm('Are you sure you want to delete your post?')){location.href='konek.php?tabel=<?php echo $tabel;?>&query=hapus&id=<?php echo $row->$pk;?>';return false;};"><i class="fa fa-trash"></i> Hapus</delete>
           <?php }?>
           </td>   
           <?php }?>
