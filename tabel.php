@@ -77,7 +77,7 @@ while ($row=$queryinfo->fetch_object()){
     ?>  
     <td width="250px">
       <?php if(in_array($tabel,$print_satuan)){ ?>
-      <button class="btn btn-xs btn-success" onclick="location.href='tabel/print_satuan.php?print=<?php echo $tabel;?>&id=<?php echo $row->$pk;?>'"><i class="fa fa-print"></i> Print</button>
+      <print class="btn btn-xs btn-success" onclick="location.href='tabel/print_satuan.php?print=<?php echo $tabel;?>&id=<?php echo $row->$pk;?>'"><i class="fa fa-print"></i> Print</print>
       <?php }if(in_array($tabel,$detail)){ ?>
       <detail class="btn btn-xs btn-success" onclick="location.href='?tabel=<?php echo $tabel."_detail";?>&id=<?php echo $row->$pk;?>'"><i class="fa fa-eye"></i> Detail</detail>
       <?php }if(!in_array($tabel,$no_edit) and @$_GET['tabel']){ ?>
