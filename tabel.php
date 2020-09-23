@@ -43,7 +43,7 @@ while ($row=$queryinfo->fetch_object()){
    while($row=$sql->fetch_object()) {  
         $no++;
         ?>
-    <tr>
+    <tr id="<?php echo $row->$pk;?>">
       <td width="50px"><?php echo $no;?></td>
       <?php
       if(@isset($view)){
