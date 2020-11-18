@@ -1,3 +1,9 @@
+<style type="text/css">
+  #scrollbox {
+overflow-y: auto;
+max-height: calc(90vh - 150px);
+}
+</style>
 <?php
  @$edit_id=$_COOKIE["headvalue"];
     if(@$edit_id!=""){ 
@@ -10,10 +16,9 @@
                  });
         </script>
 <?php
-if(@isset($qnew)){
+if($qnew!=""){
   $query=$qnew;
 }
-//echo "$query"."$where";
 $sql=$db->query("$query"."$where");
       $row=$sql->fetch_object();
 ?>
@@ -24,31 +29,33 @@ $sql=$db->query("$query"."$where");
         <h5>Edit <?php echo modify("$tabel");?></h5>
         <button class="close" data-dismiss="modal" ></button>
       </div>
-        <form action="konek.php?tabel=<?php echo $tabel;?>&query=edit&id=<?php echo $row->$pk?>" method="POST" enctype="multipart/form-data">
+        <form action="tabel/sql_tambah_edit_hapus.php?tabel=<?php echo $tabel;?>&query=edit&id=<?php echo $row->$pk?>" method="POST" enctype="multipart/form-data">
       <div class="row">
         <div class="col-md-12 mx-auto">
       
-         <div class="modal-body">
+         <div class="modal-body">          
+        <div id="scrollbox">
         <div class="form-group row">
 
           <?php
-        if(@isset($view)){
-        foreach ($view as $vkolom2) {?>
+        if(@isset($view_form)){
+        foreach ($view_form as $vkolom2) {?>
           <div class='col-sm-6'>
           <label><?php echo modify($vkolom2);?></label>
           <input type='text' class='form-control' id='<?php echo $vkolom2;?>' value='<?php echo $row->$vkolom2;?>' readonly></div>
           <?php }}
-        foreach ($form_tambah as $key) {
-          $editkey=$row->$key;
+        foreach ($form_edit as $key) {
+          @$editkey=$row->$key;
           if(in_array($key,$hidden_form)){?>
           <input type="hidden" name='<?php echo $key?>' id='<?php echo $key?>' value='<?php echo $row->$key;?>'>
           <?php
           }else{
-          include "https://raw.githubusercontent.com/adiya99/adiyarizka/master/isiform.php";
+          include "isiform.php";
           }
         }
         ?>  
       
+           </div>
            </div>
       </div>
       <div class="modal-footer">
@@ -68,19 +75,22 @@ $sql=$db->query("$query"."$where");
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5>Tambah <?php echo modify("$tabel");?></h5>
-        <button class="close" data-dismiss="modal" ></button>
+        <h5 class="modal-title" id="exampleModalLongTitle">Tambah <?php echo modify("$tabel");?></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <form action="konek.php?tabel=<?php echo $tabel;?>&query=tambah" method="POST" enctype="multipart/form-data">
+      <form action="tabel/sql_tambah_edit_hapus.php?tabel=<?php echo $tabel;?>&query=tambah" method="POST" enctype="multipart/form-data">
 
        <div class="row">
         <div class="col-md-12 mx-auto">
       <div class="modal-body ">
+        <div id="scrollbox">
         <div class="form-group row">   
 
         <?php
-        if(@isset($view)){
-        foreach ($view as $vkolom2) {?>
+        if(@isset($view_form)){
+        foreach ($view_form as $vkolom2) {?>
           <div class='col-sm-6'>
           <label><?php echo modify($vkolom2);?></label>
           <input type='text' class='form-control' id='<?php echo $vkolom2;?>' readonly></div>
@@ -90,10 +100,11 @@ $sql=$db->query("$query"."$where");
           <input type="hidden" name='<?php echo $key?>' id='<?php echo $key?>'>
           <?php
           }else{
-          include "https://raw.githubusercontent.com/adiya99/adiyarizka/master/isiform.php";
+          include "isiform.php";
           }
         }
         ?>  
+      </div>
       </div>
       </div>
       <div class="modal-footer">
@@ -108,19 +119,21 @@ $sql=$db->query("$query"."$where");
 </div>
     <?php }
 
-//form fk    
-for($i=-1;$i<100;$i++){
-if(@$tabel_fk[$i]!=""){
-  $qfk=$db->query("select column_name from information_schema.columns where table_name='$tabel_fk[$i]' && table_schema='$database'");
-  $kolom=array();
+if(empty($tabel_fk)){}else{
+foreach ($tabel_fk as $tbfk) {    
+  $qfk=$db->query("select column_name from information_schema.columns where table_name='$tbfk' && table_schema='$database'");
+  $kolomfk=array();
 while ($rowfk=$qfk->fetch_object()){
-    $kolom[]=$rowfk->column_name;
+    $kolomfk[]=$rowfk->column_name;
   }
-$tabel=$tabel_fk[$i];
+$tabelffk=$tbfk;
+if($tabelffk=="barang"){
+$where=" where stok>0";
+}else{
 $where="";
-include "https://raw.githubusercontent.com/adiya99/adiyarizka/master/sql.php";
-include "https://raw.githubusercontent.com/adiya99/adiyarizka/master/form_fk.php";
-//echo $query;
+}
+include "sqlfk.php";
+include "form_fk.php";
 }
 }
 
