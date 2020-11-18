@@ -4,7 +4,7 @@ include "$folder/konek.php"; // Load file koneksi.php
 @$tabel=$_GET['tabel'];//tabel 
 
 include "$folder/tabel/atur.php"; // Load file koneksi.php
-include "$folder/tabel/sql.php"; // Load file sql.php
+include "https://raw.githubusercontent.com/adiya99/adiyarizka/master/sql.php"; // Load file sql.php
 //echo $;
 @$search = $_POST['search']['value']; // Ambil data yang di ketik user pada textbox pencarian
 @$limit = $_POST['length']; // Ambil data limit per page
