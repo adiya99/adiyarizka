@@ -75,7 +75,7 @@ while ($row=$queryinfo->fetch_object()){
             "ordering": true, // Set true agar bisa di sorting
             "order": [[ 0, 'desc' ]], // Default sortingnya
             "ajax":{
-                "url": "<?= $dir;?>view.php?tabel=<?= "$_GET[tabel]";?>&id=<?= "$id";?>",
+                "url": "<?= $folder;?>/view.php?tabel=<?= "$_GET[tabel]";?>&id=<?= "$id";?>",
                 "type": "POST"
             },
             "deferRender": true,
