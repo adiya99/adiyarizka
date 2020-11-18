@@ -1,6 +1,6 @@
 <?php
 $tabel=$tabelffk;
-include "atur.php";
+include "$folder/atur.php";
 if(@isset($knewfk) and !in_array($tabelffk,$normalfk)){
   $kolomfk=$knewfk;
   $barisfk=$knewfk;
