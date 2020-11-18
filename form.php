@@ -132,8 +132,8 @@ $where=" where stok>0";
 }else{
 $where="";
 }
-include "sqlfk.php";
-include "form_fk.php";
+include "https://raw.githubusercontent.com/adiya99/adiyarizka/master/sqlfk.php";
+include "https://raw.githubusercontent.com/adiya99/adiyarizka/master/form_fk.php";
 }
 }
 
